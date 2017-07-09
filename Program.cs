@@ -7,12 +7,10 @@ namespace sets
     {
         static void Main(string[] args)
         {
-            HashSet<string> Showroom = new HashSet<string>();
-            Showroom.Add("Pinto");
-            Showroom.Add("Fiesta");
-            Showroom.Add("Malibu");
-            Showroom.Add("Altima");
-
+            HashSet<string> Showroom = new HashSet<string>() {
+                "Pinto", "Fiesta", "Malibu", "Altima"
+            };
+            
             // the count will show 4
             // Console.WriteLine(Showroom.Count);
 
@@ -23,26 +21,23 @@ namespace sets
             // Looping over Showroom shows no duplicates of the same name were created
             // foreach (string car in Showroom)
             // {
-            //     Console.WriteLine(car);
-                
+            //     Console.WriteLine(car);      
             // }
 
-            HashSet<string> UsedLot = new HashSet<string>();
-            UsedLot.Add("Cherokee");
-            UsedLot.Add("Mustang");
+            HashSet<string> UsedLot = new HashSet<string>(){
+                "Cherokee", "Mustang"
+            };
+
 
             // Combines Showrrom HashSet with UsedLot HashSet, Showroom. Count will now be 6
             Showroom.UnionWith(UsedLot);
-            // remove one string
             Showroom.Remove("Cherokee");
             // Count will now be 5
             // Console.WriteLine(Showroom.Count);
 
-            HashSet<string> JunkYard = new HashSet<string>();
-            JunkYard.Add("Malibu");
-            JunkYard.Add("Pinto");
-            JunkYard.Add("Sol");
-            JunkYard.Add("Clubman");
+            HashSet<string> JunkYard = new HashSet<string>(){
+                "Malibu", "Pinto", "Sol", "Clubman"
+            };
 
             // Showroom.IntersectWith(JunkYard);
             // Loop through Showroom to see which car-strings were the same, can also check the count of the overlapping
@@ -58,7 +53,6 @@ namespace sets
             // Had to comment out the IntersectWith in order for the UnionWith to console out
             foreach (string car in Showroom) {
                 Console.WriteLine(car);
-                // Console.WriteLine(Showroom.Count);
             }
         }
     }
